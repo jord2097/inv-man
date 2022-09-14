@@ -1,7 +1,9 @@
-import express from 'express';
+const express = require('express')
+const items = require('./controller')
 const router = express.Router()
 
-router.get('/posts', (req, res, next) => {}) // get all posts
-router.get('/posts/:id') // get single post
+router.get('/items', items.index) // get all posts
+router.post('/items', items.create)
 
 
+module.exports = router;
